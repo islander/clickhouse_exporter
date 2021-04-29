@@ -1,8 +1,9 @@
 all: build test
 
 init:
-	go get -u github.com/prometheus/promu
-	go get -u github.com/AlekSi/gocoverutil
+	go env -w GO111MODULE=auto
+	go install github.com/prometheus/promu@latest
+	go install github.com/AlekSi/gocoverutil@latest
 
 build:
 	go install -v
